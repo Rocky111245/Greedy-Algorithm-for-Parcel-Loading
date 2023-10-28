@@ -16,13 +16,19 @@ company is using a simple greedy algorithm for shipping parcels. They load the p
 truck in the order that it arrives at the Kuala Lumpur station. When the next parcel does not fit into 
 the truck due to the maximum weight the truck is allowed to carry, the truck drives off to Singapore.
 
--A transportation company ships parcels between Kuala Lumpur and Singapore.
--Each truck has a maximum weight capacity, WT.
--Parcels arrive sequentially and each parcel Pi has a weight Wi
--Company policy requires parcels to be shipped in the order they arrive, as the items in the parcels are perishable.
--All parcels must be shipped within the same day they are received.
--There are only 5 trucks available each day, and each has the same maximum weight.
--The current loading strategy is to load parcels into the truck in the order they arrive. If the next parcel does not fit, the truck departs.
+A transportation company that operates between Kuala Lumpur and Singapore has reached out for consultation. They're experiencing challenges with:
+
+- **Volume**: The high volume of parcels necessitates multiple trucks each day for transportation.
+- **Truck Capacity**: Each truck has a set weight limit, represented as `WT`.
+- **Parcel Sequence**: Parcels, represented as \( P_i \), arrive sequentially at the Kuala Lumpur station and each has a weight \( W_i \).
+- **Station Limitations**: The station can only accommodate one truck at any given moment.
+- **Company Policy**:
+  - Parcels need to be shipped in their arrival sequence due to their perishable nature.
+  - Every parcel should be dispatched on its arrival day.
+- **Truck Availability**: Only 5 trucks, all with the same weight capacity, are at disposal each day.
+- **Current Strategy**: Parcels are loaded based on their arrival. If a parcel can't fit into the current truck due to weight constraints, that truck heads to Singapore, making way for the next one.
+
+The objective is to assess and potentially refine the current loading strategy for efficiency.
 
 ## Code:
 ```
@@ -106,39 +112,44 @@ void parcelLoad(int numberofTrucks, int truckWeight, int pWeight[],int size, int
 
 }
 ```
-## Code Structure:
+## Code Structure
 
-### Main Function->
+### Main Function
 
--Get the maximum weight a truck can carry.
--Initialize truck capacities.
--Get the total number of parcels and their respective weights. Ensure parcel weight doesn't exceed truck capacity.
--Display the entered parcel weights.
--Load parcels onto trucks using the greedy algorithm.
+- Get the maximum weight a truck can carry.
+- Initialize truck capacities.
+- Collect the total number of parcels and their respective weights, ensuring parcel weight doesn't surpass the truck's capacity.
+- Display the weights of the parcels that were entered.
+- Use the greedy algorithm to load parcels onto trucks.
 
-### displayArray Function:
-A utility function to display the weights of the parcels.
+### `displayArray` Function
 
-### displayTruckLoad Function:
-A utility function to display the remaining capacities of the trucks after loading parcels.
+A utility function designed to showcase the weights of the parcels.
 
-### parcelLoad Function:
--Implements the greedy loading strategy.
--Iterates through the trucks and parcels.
--If the current parcel fits into the current truck, it's loaded.
--If the truck gets filled, it departs.
--If a parcel can't fit into the current truck, the truck departs and the next truck is used.
+### `displayTruckLoad` Function
 
-## How the Algorithm Works:
-1. Parcels are processed in the order they arrive.
-1. If the current parcel fits in the current truck, it's added. The truck's capacity is reduced accordingly.
-1. If the parcel doesn't fit, the current truck departs and the next truck is used.
-1. If a truck gets filled up, it departs and the next truck is used.
-1. This continues until all parcels are loaded or all trucks are used.
+A utility function created to display the capacities that remain in the trucks after the parcels have been loaded.
 
+### `parcelLoad` Function
 
-## Observations:
-The current strategy is a straightforward greedy approach. While it ensures that parcels are shipped in the order they arrive, it might not always be the most optimal in terms of truck usage. Depending on the order and weights of the parcels, there might be cases where a more sophisticated algorithm could use fewer trucks. However, given the constraints, this greedy method is simple, easy to implement, and ensures timely shipment of parcels.
+- The function implements the greedy loading strategy.
+- It runs through both the trucks and the parcels.
+- If the current parcel can fit into the current truck, it gets loaded.
+- If a truck reaches its full capacity, it departs.
+- If a parcel can't be fitted into the current truck, the truck leaves and the subsequent truck is used.
+
+## How the Algorithm Works
+
+1. Parcels get processed as they arrive.
+2. If the current parcel can be added to the current truck, it's loaded. Consequently, the truck's capacity decreases.
+3. If the parcel doesn't fit, the current truck leaves and the next truck takes its place.
+4. If a truck reaches its maximum capacity, it departs and the subsequent truck takes over.
+5. This process continues until all parcels are loaded or all trucks are used.
+
+## Observations
+
+The current strategy employed is based on a straightforward greedy approach. While this ensures parcels are shipped in the order they arrive, it may not always be the most optimal in terms of truck utilization. Depending on the sequence and weights of the parcels, there could be situations where a more advanced algorithm would use fewer trucks. However, considering the existing constraints, this greedy approach stands out for its simplicity, ease of implementation, and its guarantee of timely parcel shipment.
+
 
 ## Time Complexity of the Algorithm:
 ## Efficiency Analysis of the Greedy Parcel Loading Algorithm
