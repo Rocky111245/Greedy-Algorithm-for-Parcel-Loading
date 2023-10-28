@@ -1,5 +1,14 @@
 # Greedy-Algorithm-for-Parcel-Loading
-This code addresses the problem of optimally loading parcels into trucks for a transportation company that ships between Kuala Lumpur and Singapore. The algorithm is based on a simple greedy approach. 
+This code addresses the problem of optimally loading parcels into trucks for a transportation company that ships between Kuala Lumpur and Singapore. The algorithm is based on a simple greedy approach and is implemented in C++. 
+
+## Author's Personal Note
+
+This project began as a personal exploration into the intricate world of algorithms, specifically tailored for efficient embedded IoT solutions. In the age of interconnected devices and systems, the significance of efficient algorithms becomes paramount. Such algorithms not only optimize the decision-making processes but also ensure the seamless and effective functioning of IoT systems.
+
+The transportation problem tackled in this project serves as a metaphor for the real-world challenges IoT systems face: managing limited resources (like bandwidth or power) to handle a vast array of tasks or data points. By understanding and implementing efficient algorithms, we can pave the way for more responsive, energy-efficient, and intelligent IoT systems.
+
+This project was not just a coding exercise but an intellectual endeavor to bridge the gap between theoretical algorithmic challenges and practical real-world applications. It's a testament to the adage that with the right algorithms, we can make our digital world not just smart, but also wise.
+
 
 ## Problem Statement:
 A transportation company that ships parcels between Kuala Lumpur and Singapore has approached 
