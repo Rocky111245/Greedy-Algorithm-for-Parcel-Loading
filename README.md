@@ -123,7 +123,7 @@ void parcelLoad(int numberofTrucks, int truckWeight, int pWeight[],int size, int
 ```
 ## Code Structure
 
-### Main Function
+### `Main` Function
 
 - Get the maximum weight a truck can carry.
 - Initialize truck capacities.
